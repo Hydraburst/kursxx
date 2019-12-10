@@ -18,9 +18,9 @@ public class Processes {
         this.memoryScheduler = memoryScheduler;
     }
 
-    
 
-    public Process CheckPriority(){
+
+    public void PriorityCheck(){
         Process runningProcess = null;
 
         for (Process process:getList()) {
@@ -28,10 +28,19 @@ public class Processes {
                 runningProcess = process;
             }
 
-           return runningProcess;
+            if(runningProcess!=null) {
+                if (process.getId() < runningProcess.getId()) {
+                    getList().get(getList().indexOf(runningProcess)).setTypeState(TypeOfProcess.WAITING);
+                    try {
+                        toWork(process);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
         }
-        return null;
     }
+
 
     public Process processCheckType(){
         int minPriority=31;

@@ -4,7 +4,7 @@ public enum TypeOfProcess {
     NEW{
         @Override
         public String toString(){
-            return "New";
+            return "Waiting";
         }
     },
     RUNNING{

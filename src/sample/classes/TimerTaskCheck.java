@@ -12,6 +12,6 @@ public class TimerTaskCheck extends TimerTask {
 
     @Override
     public void run() {
-        processes.CheckPriority();
+        processes.PriorityCheck();
     }
 }
