@@ -3,6 +3,7 @@ package sample.classes;
 import sample.Controller;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Processes {
 
@@ -11,12 +12,19 @@ public class Processes {
     public ArrayList<Process> getList(){return list;}
 
     private ArrayList<Process> list;
-    private Queue queue;
+    public Queue queue;
 
+    public static Comparator<Process> bySort = new Comparator<Process>() {
+        @Override
+        public int compare(Process o1, Process o2) {
+            return o1.priority > o2.priority? 1: o1.priority < o2.priority ? -1 : 0 ;
+        }
+    };
     public Processes(MemoryScheduler memoryScheduler){
         this.list = new ArrayList<>();
         this.memoryScheduler = memoryScheduler;
     }
+
 
 
 

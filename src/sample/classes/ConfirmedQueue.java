@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class ConfirmedQueue
 {
 
-    private ArrayList<Process> confirmedQueue;
+    public ArrayList<Process> confirmedQueue;
 
     public ConfirmedQueue(){
         confirmedQueue = new ArrayList<>();

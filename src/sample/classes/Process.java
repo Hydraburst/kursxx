@@ -4,11 +4,11 @@ import java.util.Random;
 
 public class Process {
     private String name;
-    private int id=0;
+    public int id=0;
     private int timeOfTacts;
     private int timeIn;
     private int time;
-    private int priority;
+    public int priority;
     private int size;
 
     private Random random = new Random();
